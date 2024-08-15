@@ -23,7 +23,7 @@ function Document() {
     })
 }
   return (
-    <div className='h-full flex flex-col items-center justify-center'>
+    <div className='h-full flex flex-col items-center justify-center relative'>
       <Logo width={350} height={350} color='#3a4e5e' />
       <BoxReveal boxColor='#3a4e5e' duration={.5}>
         <h2 className='text-cyan-600 font-sans text-[1rem] font-bold my-4 capitalize'>

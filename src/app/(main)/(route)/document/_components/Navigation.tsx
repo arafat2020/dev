@@ -11,6 +11,10 @@ import { Popover, PopoverTrigger } from '@radix-ui/react-popover';
 import { PopoverContent } from '@/components/ui/popover';
 import TrashBox from './TrashBox';
 import NavBar from './NavBar';
+import { useUser } from '@clerk/nextjs';
+import { useMutation } from 'convex/react';
+import { api } from '../../../../../../convex/_generated/api';
+import { toast } from 'sonner';
 
 function Navigation() {
     const pathName = usePathname();
@@ -81,6 +85,18 @@ function Navigation() {
             }, 300);
         }
     }
+    const { user } = useUser();
+    const create = useMutation(api.document.create)
+    const handleCreate = () => {
+      const promise = create({
+          title: "Untitled",
+      })
+      toast.promise(promise, {
+          loading: "Creating New Note",
+          success: "New Note Created Successfully",
+          error: "Failed To create New Note"
+      })
+  }
     return (
         <>
             <aside ref={isSideBareRef} className={cn(
@@ -112,7 +128,7 @@ function Navigation() {
                     <Item
                         label='New Page'
                         Icon={PlusCircle}
-                        onClick={() => { }}
+                        onClick={() => handleCreate()}
                     />
                     <Popover>
                         <PopoverTrigger className=' mt-4 flex space-x-2 items-center font-sans w-[100px] font-medium  ml-3'>
