@@ -7,7 +7,7 @@ async function Home() {
   return (
     <div style={{
       background:`url(./bg.jpg)`
-    }} className='w-full h-full'>
+    }} className='w-full h-full bg-center bg-no-repeat bg-cover'>
       <div style={{
         background: 'rgba(0, 0, 0, 0.5)'
       }} className='w-full h-full flex flex-col'>
