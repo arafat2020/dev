@@ -15,7 +15,7 @@ import { Skeleton } from '@/components/ui/skeleton'
 
 interface CoverProp {
     url?: string,
-    preview?: string
+    preview?: boolean
 }
 
 function Cover({

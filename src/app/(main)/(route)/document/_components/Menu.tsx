@@ -45,7 +45,7 @@ function Menu({
             </DropdownMenuTrigger>
             <DropdownMenuContent
                 align='end'
-                alignOffset={8}
+                alignOffset={10}
                 forceMount
                 className='bg-cyan-950 border-none text-slate-100'
             >
