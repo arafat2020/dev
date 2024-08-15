@@ -9,6 +9,7 @@ import { MenuIcon } from 'lucide-react'
 import Title from './Title'
 import ArchiveBanner from './ArchiveBanner'
 import Menu from './Menu'
+import Publish from './Publish'
 
 interface NavBarProp {
   isCollapsed: boolean,
@@ -40,6 +41,7 @@ function NavBar({
         }
         <div className='w-full flex items-center justify-between'>
           <Title initialData={document} />
+          <Publish initialDocument={document}/>
           <Menu id={params.id as Id<"document">}/>
         </div>
       </nav>
