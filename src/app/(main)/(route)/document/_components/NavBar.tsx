@@ -26,7 +26,7 @@ function NavBar({
   })
   if (document === undefined) {
     return <div className='w-full p-3'>
-      <Title.Skeleton/>
+      <Title.Skeleton />
     </div>
   }
   return (
@@ -41,12 +41,14 @@ function NavBar({
         }
         <div className='w-full flex items-center justify-between'>
           <Title initialData={document} />
-          <Publish initialDocument={document}/>
-          <Menu id={params.id as Id<"document">}/>
+          <div className='flex items-center space-x-2'>
+            <Publish initialDocument={document} />
+            <Menu id={params.id as Id<"document">} />
+          </div>
         </div>
       </nav>
       {
-        document.isArchived && <ArchiveBanner/>
+        document.isArchived && <ArchiveBanner />
       }
     </Fragment>
   )
