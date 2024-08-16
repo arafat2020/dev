@@ -64,7 +64,7 @@ function ToolBar({
         <div className='pl-[54px] group relative'>
             {
                 !!document.icon && !preview && (
-                    <div className='flex items-center space-x-2 group/icon pt-6'>
+                    <div className='flex items-center group/icon pt-6'>
                         <Emoji onChange={onIconSelect}>
                             <p className='text-6xl hover:opacity-75 transition'>
                                 {document.icon}
@@ -72,7 +72,7 @@ function ToolBar({
                         </Emoji>
                         <Button
                             onClick={onRemoveIcon}
-                            variant="outline"
+                            variant="ghost"
                             size="icon"
                             className='rounded-full group-hover/icon:opacity-100 transition'
                         >
@@ -88,7 +88,7 @@ function ToolBar({
                     </p>
                 )
             }
-            <div className='opacity-0 group-hover:opacity-100 flex items-center space-x-1 py-4'>
+            <div className='opacity-0 group-hover:opacity-100 flex items-center space-x-1'>
                 {
                     !document.icon && !preview && (
                         <Emoji

@@ -18,7 +18,7 @@ function TrashBox() {
   const remove = useMutation(api.document.remove)
   const [search, setSearch] = useState<string>("")
   const filterDocument = documents?.filter(doc => {
-    return doc.title.toLowerCase().includes(search.toUpperCase())
+    return doc.title.toLowerCase().includes(search.toLocaleLowerCase())
   })
   const onRestore = (e: MouseEvent, id: Id<"document">) => {
     e.stopPropagation()
@@ -58,7 +58,7 @@ function TrashBox() {
           className='h-7 my-2 bg-sky-950 focus-visible:ring-transparent outline-none border-none '
         />
       </div>
-      <div className='w-full max-h-[200px] overflow-y-auto'>
+      <div className='w-full max-h-[200px] overflow-y-auto p-1'>
         {
           filterDocument?.length === 0 && (
             <div className=' px-1 pb-1'>

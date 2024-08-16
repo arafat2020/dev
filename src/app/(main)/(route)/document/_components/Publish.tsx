@@ -62,7 +62,7 @@ function Publish({ initialDocument }: PublishProp) {
           }
         </Button>
       </PopoverTrigger>
-      <PopoverContent align='end' alignOffset={8} className='w-auto bg-cyan-950'>
+      <PopoverContent align='end' alignOffset={8} className='w-auto bg-cyan-950 text-slate-100'>
         {
           initialDocument.isPublished ? (<div className='gap-y-4'>
             <div className='flex items-center gap-x-2 mb-1'>

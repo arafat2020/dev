@@ -47,6 +47,7 @@ function SearchCommand() {
     }
     const onSelect = (id:string) => {
         router.push(`/document/${id}`)
+        onClose()
     }
     return (
         <CommandDialog open={isOpen} onOpenChange={onClose}>
@@ -64,7 +65,7 @@ function SearchCommand() {
                                 key={doc._id}
                                 value={`${doc._id}-${doc.title}`}
                                 title={doc.title}
-                                onSelect={onSelect}
+                                onSelect={()=>onSelect(doc._id)}
                             >
                                 {
                                     doc.icon ? (
